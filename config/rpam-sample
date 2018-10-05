@@ -1,0 +1,6 @@
+#%PAM-1.0
+
+# default:
+#  motd=/etc/motd motd=/run/motd motd=/usr/lib/motd
+#  motd_dir=/etc/motd.d/ motd_dir=/run/motd.d/ motd_dir=/usr/lib/motd.d/
+session    optional   rpam_motd.so

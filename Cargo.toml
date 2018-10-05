@@ -1,0 +1,24 @@
+[package]
+name = "rpam_motd"
+version = "0.1.0"
+authors = ["Luca Bruno <lucab@debian.org>"]
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+openat = "0.1"
+pamsm = "0.2"
+syslog = "4.0"
+
+[patch.crates-io]
+pamsm = { git = "https://github.com/lucab/pamsm-rs.git", branch = "ups/feat-libpam" }
+syslog = { git = "https://github.com/lucab/rust-syslog.git", branch = "ups/feat-backtrace" }
+
+[profile.release]
+opt-level = 3
+debug = false
+lto = true
+debug-assertions = false
+panic = "abort"
